@@ -142,11 +142,6 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
-
-  </li>
         <li class="menu-item menu-item-resources">
 
     <a href="/resources/" rel="section"><i class="fa fa-download fa-fw"></i>资源</a>
@@ -227,11 +222,39 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              暂无标签
+              目前共计 1 个标签
             </div>
-            <div class="tag-cloud-tags">
-              
-            </div>
+            
+			<div class="tags" id="myTags">
+  <canvas width="500" height="500" id="my3DTags">
+    <p>Anything in here will be replaced on browsers that support the canvas element</p>
+  </canvas>
+</div>
+<div class="tags" id="tags">
+  <ul style="display: none">
+    <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 12px; color: #ccc">测试</a>
+  </ul>
+</div>
+<script type="text/javascript" src="/js/tagcanvas.js"></script>
+<script type="text/javascript" >
+  window.onload = function() {
+    try {
+      TagCanvas.Start('my3DTags','tags',{
+        textFont: 'Georgia,Optima',
+        textColour: null,
+        outlineColour: 'black',
+        weight: true,
+        reverse: true,
+        depth: 0.8,
+        maxSpeed: 0.05,
+        bgRadius: 1,
+        freezeDecel: true
+      });
+    } catch(e) {
+      document.getElementById('myTags').style.display = 'none';
+    }
+  };
+</script>
           </div>
         
       </div>
@@ -312,6 +335,18 @@
           <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>
